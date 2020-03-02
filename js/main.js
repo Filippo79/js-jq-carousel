@@ -81,7 +81,13 @@ $(document).ready(function() {
         //clearInterval(interval);
 
     //});
-
+                // si ferma quando si passa col puntatore nell'immagine
+    $('.images').mouseenter(function(){
+        clearInterval(interval);
+    });
+    $('.images').mouseeleave(function(){
+        
+    });
 
 
 });

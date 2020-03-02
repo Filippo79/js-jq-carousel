@@ -85,8 +85,9 @@ $(document).ready(function() {
     $('.images').mouseenter(function(){
         clearInterval(interval);
     });
-    $('.images').mouseeleave(function(){
-        
+    $('.images').mouseeleave(function(){ // non sono riuscito a far ripartire le slide...
+
+
     });
 
 

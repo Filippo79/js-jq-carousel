@@ -40,6 +40,7 @@ $(document).ready(function() {
             $('.images img.active').removeClass('active');// rimuovi la classe 'active'
             $('.images img.first').addClass('active');// aggiungi la classe 'active'
 
+            //pallini !!!! ma non vanno in direzione della freccia
             $('.slider-nav i.active').removeClass('active');
             $('.slider-nav i.first').addClass('active');
 
@@ -47,23 +48,33 @@ $(document).ready(function() {
 
         }else {
             var imgAttiva = $('.images img.active');// (Rimuovo l'active) Variabile images img.active
-            var prossimaImg = $('.images img.active').next();//variabile 'images img.active'Next=successiva slide
+            var prossimaImg = $('.images img.active').prev();//variabile 'images img.active'Next=successiva slide
 
             imgAttiva.removeClass('active');//rimuovo la classe 'active '
             prossimaImg.addClass('active');//aggiungo la classe ' active'
 
-
+            //pallini !!!! ma non vanno in direzione della freccia
             var pallinoAttivo = $('.slider-nav i.active'); // (Rimuovo l'active) variabile slider-nav i.active
-            var prossimoPallino = $('.slider-nav i.active').next();//variabile 'slider-nav i.active' next= pallini successivo
+            var prossimoPallino = $('.slider-nav i.active').prev();//variabile 'slider-nav i.active' next= pallini successivo
 
             pallinoAttivo.removeClass('active');//rimuovo la classe
             prossimoPallino.addClass('active');//aggiungo la classe
+        }
+    }
 
+
+
+
+    var secondiMax = 0;
+    setInterval(function(){
+        nextSlide();
+        if (secondiMax == 10000) {
+            clearInterval(nextSlide);
         }
 
+    }, 2000);
 
 
-    }
 
 
 });

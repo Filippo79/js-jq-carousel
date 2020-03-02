@@ -62,18 +62,25 @@ $(document).ready(function() {
         }
     }
 
-
-
-
+                    // funzione per intervallo 'nextSlide'di 2 secondi
+    //setInterval(function(){
+        //nextSlide();
+    //}, 2000);
+                        //AIUTATO DA NIKOLAS
+                    // funzione che termina dopo 10 secondi
     var secondiMax = 0;
-    setInterval(function(){
+    var interval = setInterval(function(){ //Setto una variabile che "contiene" l'interval
         nextSlide();
+        secondiMax += 2000; //Incremento di 2000 ad ogni giro perchè l'interval gira ogni 2 secondi
         if (secondiMax == 10000) {
-            clearInterval(nextSlide);
+        clearInterval(interval); //fermo l'interval con la variabile che lo contiene
         }
-
     }, 2000);
+                //si ferma quando si preme una freccia (.prev .next)
+    //$('.prev , .next').click(function(){
+        //clearInterval(interval);
 
+    //});
 
 
 
